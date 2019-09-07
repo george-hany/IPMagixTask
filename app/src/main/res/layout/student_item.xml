@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="student"
+            type="com.example.android.ipmagixtask.data.network.model.Student" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_50sdp">
+    <TextView
+        android:id="@+id/student_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@{student.studentName}"
+        android:textSize="@dimen/_14sdp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/top_guideline3"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_guideline4"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline2"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
