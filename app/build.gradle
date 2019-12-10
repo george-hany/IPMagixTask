@@ -8,7 +8,8 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.0"
-    defaultConfig {
+    defaultConfig {apply plugin: 'kotlin-kapt'
+
         applicationId "com.example.android.ipmagixtask"
         minSdkVersion 16
         targetSdkVersion 29

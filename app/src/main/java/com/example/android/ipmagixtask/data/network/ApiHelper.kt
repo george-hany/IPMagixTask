@@ -1,8 +1,8 @@
 package com.example.android.ipmagixtask.data.network
 
 import com.example.android.ipmagixtask.data.network.model.StudentsResult
-import io.reactivex.Observable
+import io.reactivex.Single
 
 interface ApiHelper {
-    fun getAllStudents():Observable<StudentsResult>
+    fun getAllStudents():Single<StudentsResult>
 }

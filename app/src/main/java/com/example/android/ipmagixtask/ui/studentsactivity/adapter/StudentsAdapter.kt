@@ -1,7 +1,6 @@
-package com.example.android.ipmagixtask.ui.studentsactivity
+package com.example.android.ipmagixtask.ui.studentsactivity.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +12,10 @@ class StudentsAdapter(var students:List<Student>):RecyclerView.Adapter<StudentsA
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentsHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding: StudentItemBinding = DataBindingUtil.inflate(inflater, R.layout.student_item, parent, false)
-        val h = StudentsHolder(binding)
+        val h =
+            StudentsHolder(
+                binding
+            )
         return h
     }
 
