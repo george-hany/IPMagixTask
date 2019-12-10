@@ -1,4 +1,4 @@
-package com.example.android.ipmagixtask.ui.app
+package com.example.android.ipmagixtask.application
 
 import android.app.Application
 import com.androidnetworking.AndroidNetworking

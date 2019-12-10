@@ -8,7 +8,7 @@ import androidx.lifecycle.Observer
 import com.example.android.ipmagixtask.R
 import com.example.android.ipmagixtask.data.network.model.Student
 import com.example.android.ipmagixtask.databinding.ActivityMainBinding
-import com.example.android.ipmagixtask.ui.app.MyApplication
+import com.example.android.ipmagixtask.application.MyApplication
 import com.example.android.ipmagixtask.ui.studentsactivity.adapter.StudentsAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
