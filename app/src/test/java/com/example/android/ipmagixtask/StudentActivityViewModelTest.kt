@@ -71,7 +71,7 @@ class StudentActivityViewModelTest {
     )
 
     @Before
-    fun befor() {
+    fun before() {
         apiHelper = AppApiHelper()
         viewModel = StudentsViewModel(apiHelper)
         viewModel.studentsResponse = realData
