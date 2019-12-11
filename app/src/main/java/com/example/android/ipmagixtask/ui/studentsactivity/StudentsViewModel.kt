@@ -10,16 +10,16 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
-class StudentsViewModel constructor(var apiHelper: ApiHelper):ViewModel() {
-    val students=MutableLiveData<List<Student>>()
-     var studentsResponse:ArrayList<Student>?=null
+class StudentsViewModel constructor(var apiHelper: ApiHelper) : ViewModel() {
+    val students = MutableLiveData<List<Student>>()
+    var studentsResponse: List<Student>? = null
 
-    fun getAllStudents(){
+    fun getAllStudents() {
         //get the observable from apihelper
-        val observable=apiHelper.getAllStudents()
+        val observable = apiHelper.getAllStudents()
         observable.subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(object :SingleObserver<StudentsResult>{
+            .subscribe(object : SingleObserver<StudentsResult> {
 
                 override fun onSubscribe(d: Disposable) {
                 }
@@ -28,20 +28,26 @@ class StudentsViewModel constructor(var apiHelper: ApiHelper):ViewModel() {
                 }
 
                 override fun onSuccess(t: StudentsResult) {
-                    studentsResponse=t.data
-                    sortAscending()                }
+                    studentsResponse = t.data
+                    sortAscending()
+                }
             })
     }
-    fun sortAscending(){
-        studentsResponse?.let{ it ->
-            val list= it.sortedWith(compareBy { it.studentName })
-            students.value=list
+
+    fun sortAscending() {
+        studentsResponse?.let { it ->
+            val list = it.sortedWith(compareBy { it.studentName })
+            students.postValue(list)
+            studentsResponse = list
         }
     }
-    fun sortDescending(){
-        studentsResponse?.let{it->
-            val list= it.sortedWith(compareByDescending { it.studentName })
-            students.value=list
+
+    fun sortDescending() {
+        studentsResponse?.let { it ->
+            val list = it.sortedWith(compareByDescending { it.studentName })
+            students.postValue( list)
+            studentsResponse = list
+
         }
     }
 }
